@@ -24,7 +24,7 @@ angular.module('thereApp')
         if (error) {
           console.log(error.message);
         } else {
-          session.publish('myPublisherDiv', {}); 
+          	session.publish('myPublisherDiv', {width: '100%', height: '600px'}); 
         }
       });
   });
