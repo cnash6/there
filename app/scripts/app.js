@@ -21,15 +21,15 @@
 		])
 	.config(function ($routeProvider) {
 		$routeProvider
-		.when('/', {
-			templateUrl: 'views/main.html',
-			controller: 'MainCtrl',
-			controllerAs: 'main'
+		.when('/people', {
+			templateUrl: 'views/people.html',
+			controller: 'PeopleCtrl',
+			controllerAs: 'people'
 		})
-		.when('/about', {
-			templateUrl: 'views/about.html',
-			controller: 'AboutCtrl',
-			controllerAs: 'about'
+    .when('/', {
+			templateUrl: 'views/appointments.html',
+			controller: 'AppointmentsCtrl',
+			controllerAs: 'appointments'
 		})
 		.when('/session', {
 		  templateUrl: 'views/session.html',
