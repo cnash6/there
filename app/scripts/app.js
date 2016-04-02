@@ -8,29 +8,34 @@
  *
  * Main module of the application.
  */
-angular
-  .module('thereApp', [
-    'ngAnimate',
-    'ngAria',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+ angular
+	.module('thereApp', [
+		'ngAnimate',
+		'ngAria',
+		'ngCookies',
+		'ngResource',
+		'ngRoute',
+		'ngSanitize',
+		'ngTouch'
+		])
+	.config(function ($routeProvider) {
+		$routeProvider
+		.when('/', {
+			templateUrl: 'views/main.html',
+			controller: 'MainCtrl',
+			controllerAs: 'main'
+		})
+		.when('/about', {
+			templateUrl: 'views/about.html',
+			controller: 'AboutCtrl',
+			controllerAs: 'about'
+		})
+		.when('/session', {
+		  templateUrl: 'views/session.html',
+		  controller: 'SessionCtrl',
+		  controllerAs: 'session'
+		})
+		.otherwise({
+			redirectTo: '/'
+		});
+	});
