@@ -16,7 +16,8 @@
 		'ngResource',
 		'ngRoute',
 		'ngSanitize',
-		'ngTouch'
+		'ngTouch',
+    'firebase'
 		])
 	.config(function ($routeProvider) {
 		$routeProvider
@@ -38,4 +39,7 @@
 		.otherwise({
 			redirectTo: '/'
 		});
-	});
+	})
+  .constant('_', _)
+  .constant('moment', moment)
+  ;
