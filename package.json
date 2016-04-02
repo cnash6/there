@@ -32,12 +32,14 @@
     "time-grunt": "^1.0.0"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4.4.2"
   },
   "scripts": {
     "test": "grunt test"
   },
   "dependencies": {
-    "angular-material": "^1.0.7"
+    "angular-material": "^1.0.7",
+    "express": "^4.13.4",
+    "gzippo": "^0.2.0"
   }
 }
