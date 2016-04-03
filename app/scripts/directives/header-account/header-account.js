@@ -11,6 +11,7 @@ angular.module('thereApp')
 
         console.log('changeCurrentUser');
         $scope.currentUser = auth.getCurrentUser();
+        
       });
 
       $scope.loggy = function() {
