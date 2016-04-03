@@ -1,10 +1,2 @@
-<div>
-<div ng-if="currentUser">
-  {{ currentUser.name }}
-  <div ng-click="logout()"><a>Logout</a></div>
-</div>
-
-<div ng-if="!currentUser">
-  <div><a ng-href="#/login">Login</a></div>
-</div>
-</div>
+<a ng-if="currentUser" ng-click="logout()">Logout</a>  {{ currentUser.name }}</div>
+<a ng-if="!currentUser" ng-href="#/login">Login</a>
