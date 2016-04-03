@@ -2,9 +2,13 @@
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
-
-@import "appointments";
+@import "mixins";
+@import "appointments"; 
 @import "addApptmt";
+// Colors  
+$green: #009688;
+$black: #000;
+$navbar-bg: $green;
 
 .browsehappy {
 	margin: 0.2em 0;
@@ -97,13 +101,19 @@ main {
 	justify-content: center;
 	border-bottom: 1px solid #EEE;
 	li {
-		width: calc(100%/3);
+		// width: calc(100%/3);
+		width: 100%;
 		text-align: center;
 		border-bottom: 2px solid transparent;
 		&.active {
 			border-bottom-color: blue;
 		}
-	}
+	}  
+}
+
+#navbarPrimary {
+	background-color: $navbar-bg;
+	@include box-shadow( 0, 1px, 3px, rgba($black, 0.5));
 }
 // .container {
 // 	position: relative;

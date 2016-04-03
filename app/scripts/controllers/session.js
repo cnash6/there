@@ -28,7 +28,7 @@ angular.module('thereApp')
         } else {
           	session.publish('theirCamDiv', {
               width: '100%',
-              height: '600px'
+              height: '100vh'
             });
         }
       });
