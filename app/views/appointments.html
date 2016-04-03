@@ -1,10 +1,17 @@
-<p>This is the appointments view.</p>
 <div class="appointments-list-container">
-
-
+	<div ng-repeat="app in apps" class="appointment">
+		<div class="row">
+			<span class="appointment-client col-xs-6">{{app.client}}</span>
+			<span class="appointment-date col-xs-6">{{app.startdate}} - {{app.enddate}}</span>
+		</div>
+		<div class="row">
+			This is the description of this appointment
+		</div>
+		<div class="row">
+			Therapist:  {{app.therapist}} | Interpreter: {{app.interpretter}}
+		</div>
+	</div>
 
 </div>
 
-<div ng-repeat="app in apps">
-	{{app.client}}
-</div>
+
