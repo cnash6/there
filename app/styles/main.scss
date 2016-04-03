@@ -171,11 +171,13 @@ main {
 	}
 
 	.navbar-nav {
-		a {
-			&:hover,
-			&:active,
-			&:hover {
-				background-color: transparent;
+		li {
+			a {
+				&:hover,
+				&:active,
+				&:visited {
+					background-color: transparent;
+				}
 			}
 		}
 	}
