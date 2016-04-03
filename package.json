@@ -43,6 +43,7 @@
     "angular-material": "^1.0.7",
     "express": "^4.13.4",
     "gzippo": "^0.2.0",
-    "imagemin": "^4.0.0"
+    "imagemin": "^4.0.0",
+    "opentok": "^2.3.0"
   }
 }

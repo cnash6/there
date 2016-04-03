@@ -1,7 +1,6 @@
 <!doctype html>
-<html>
-
-<head>
+<html ng-app="thereApp">
+  <head>
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
@@ -14,9 +13,8 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-</head>
-
-<body ng-app="thereApp">
+  </head>
+  <body >
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -46,13 +44,15 @@
                 </div>
             </header>
             <div ng-view=""></div>
-            <div class="footer">
+            <footer class="footer">
                 <div class="container">
                     <p><span class="glyphicon glyphicon-heart"></span> from the tHERE team</p>
                 </div>
-            </div>
+            </footer>
         </div>
     </main>
+
+
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
     ! function(A, n, g, u, l, a, r) {
@@ -84,6 +84,7 @@
     <script src="bower_components/moment/moment.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/appointments.js"></script>
@@ -91,6 +92,7 @@
     <script src="scripts/controllers/people.js"></script>
     <script src="scripts/controllers/session.js"></script>
     <!-- endbuild -->
+
 </body>
 
 </html>

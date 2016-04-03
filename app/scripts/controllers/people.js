@@ -9,5 +9,6 @@
  */
 angular.module('thereApp')
   .controller('PeopleCtrl', function () {
+    console.log('people')
 
   });
