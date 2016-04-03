@@ -129,10 +129,17 @@ main {
 		display: flex;
 		flex:3;
 		justify-content:flex-start;
+		img {
+			width: 80px;
+		}
 	}
 
 	.container-fluid {
 		width: 100%;
+	}
+
+	.navbar-collapse {
+		flex:1;
 	}
 }
 
