@@ -8,6 +8,8 @@ angular.module('thereApp')
     templateUrl: 'scripts/directives/session-notes/session-notes.html',
     controller: function($scope, api, moment, auth) {
 
+      $scope.notes = api.getArray('notes');
+
       $scope.addNote = function(note) {
 
         api.update('notes', {
