@@ -19,12 +19,25 @@ app.listen(process.env.PORT || 5000, function () {
 app.get("/generatesession", function(req, res) {
 	console.log(opentok);	
 	var sessionId;
-	opentok.createSession({mediaMode:"routed"}, function(error, session) {
+	opentok.createSession({mediaMode:"routed", archiveMode: always}, function(error, session) {
 	  if (error) {
 	    console.log("Error creating session:", error)
 	  } else {
 	    sessionId = session.sessionId;
 	    res.send({sessionId: sessionId});
+	  }
+	});
+})
+
+app.post("/startArchive", function(req, res) {
+	sessionId = req.params.sessionId;
+	opentok.startArchive(sessionId, { name: 'Important Presentation' }, function(err, archive) {
+	  if (err) {
+	    return console.log(err);
+	  } else {
+	    // The id property is useful to save off into a database
+	    console.log("new archive:" + archive.id);
+	    res.send({archiveid: archive.id})
 	  }
 	});
 })

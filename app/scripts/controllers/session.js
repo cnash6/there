@@ -73,7 +73,8 @@ angular.module('thereApp')
 			  	} else {
 			  		session.subscribe(event.stream, 'mainCamDiv', {
 			  			width: '100%',
-				      	height: '100%'
+				      	height: '100%',
+				      	insertMode: 'replace'
 			  		});
 			  	}
 
