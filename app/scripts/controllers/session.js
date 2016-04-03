@@ -12,15 +12,14 @@ angular.module('thereApp')
 
   		$http({
   		    method : "GET",
-  		    url : "/gettoken",
-  		    port: 5000
+  		    url : "https://refugeehackthere.herokuapp.com/generatesession"
   		}).then(function mySucces(response) {
   		    console.log(response);
   		}, function myError(response) {
   		    console.log(response.statusText);
   		});
 
-	  	console.log($location.search());
+	  	//console.log($location.search());
 
 		var apiKey = '45548832';
 		var sessionId = '2_MX40NTU0ODgzMn5-MTQ1OTYwNDg0NDg0N35EU3U1cktYY2lhTEJHc3VPQTNXNFY4NGR-UH4';
