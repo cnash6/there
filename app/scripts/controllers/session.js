@@ -56,7 +56,7 @@ angular.module('thereApp')
 			    session.subscribe(event.stream, 'theirCamDiv', {
 			      insertMode: 'append'
 			    });
-			    console.log(event.stream.connection)
+			    console.log(event.stream.connection.data)
 			  }
 			});
 			session.connect(token, function(error) {
