@@ -19,7 +19,7 @@ angular.module('thereApp')
     };
 
     $scope.addAppointment('app1', {
-      client: 'Sammy'
+      client: 'Big Boss'
     });
 
   });
