@@ -21,7 +21,10 @@ app.get("/getsession", function(req, res) {
 	    console.log("Error creating session:", error)
 	  } else {
 	    sessionId = session.sessionId;
-	    var token = opentok.generateToken(sessionId);
+	    var tokenOptions = {};
+	    tokenOptions.role = "publisher";
+	    tokenOptions.data = "username=bob";
+	    var token = opentok.generateToken(sessionId, tokenOptions);
 	    console.log("Session ID: " + sessionId);
 	    res.send("SessionId: " + sessionId + "\n\nToken: " + token);
 	  }
