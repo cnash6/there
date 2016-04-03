@@ -40,6 +40,24 @@
 			redirectTo: '/'
 		});
 	})
+
+  .run(function($rootScope, $location) {
+    $rootScope.$on( "$locationChangeStart", function(event, next, current) {
+      if ($rootScope.session) {
+        $rootScope.session.off();
+        $rootScope.session.disconnect();
+        $rootScope.session = null;
+      }
+      // if ($rootScope.loggedInUser == null) {
+      //   // no logged user, redirect to /login
+      //   if ( next.templateUrl === "partials/login.html") {
+      //   } else {
+      //     $location.path("/login");
+      //   }
+      // }
+    });
+  })
+
   .constant('_', _)
   .constant('moment', moment)
   ;
