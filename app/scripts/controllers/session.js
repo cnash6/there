@@ -8,7 +8,7 @@
  * Controller of the thereApp
  */
 angular.module('thereApp')
-  	.controller('SessionCtrl', function ($scope, $rootScope, $location, $http) {
+  	.controller('SessionCtrl', function ($scope, $rootScope, $location, $http, auth) {
 
   		// $http({
   		//     method : "GET",
@@ -25,13 +25,22 @@ angular.module('thereApp')
 			sessionId = $location.search().sessionid;
 		}
 
+		var user = auth.getCurrentUser();
+		if(!user) {
+			user = {
+				name: "fallback user",
+				role: "interpreter"
+			}
+		}
+		console.log(user);
+
 		
   		$http({
   		    method : "GET",
   		    url : "https://refugeehackthere.herokuapp.com/gettoken",
   		    params: {
   		    	sessionid: sessionId,
-  		    	role: 'client'
+  		    	role: user.role
   		    }
   		}).then(function mySucces(response) {
   		    var token = response.data.token;
@@ -53,10 +62,21 @@ angular.module('thereApp')
 			$rootScope.session = session;
 			session.on({
 			  streamCreated: function(event) {
-			    session.subscribe(event.stream, 'theirCamDiv', {
-			      insertMode: 'append'
-			    });
-			    console.log(event.stream.connection.data)
+			  	var data = event.stream.connection.data;
+			  	console.log(data);
+			  	if (data.userrole == "interpreter") {
+			  		session.subscribe(event.stream, 'theirCamDiv', {
+						width: '100%',
+				      	height: '100%',
+			  		  	insertMode: 'append'
+			  		});
+			  	} else {
+			  		session.subscribe(event.stream, 'mainCamDiv', {
+			  			width: '100%',
+				      	height: '100%'
+			  		});
+			  	}
+
 			  }
 			});
 			session.connect(token, function(error) {
@@ -65,7 +85,7 @@ angular.module('thereApp')
 				} else {
 				  	session.publish('myCamDiv', {
 				      width: '100%',
-				      height: '600px'
+				      height: '100%'
 				    });
 				}
 			});
