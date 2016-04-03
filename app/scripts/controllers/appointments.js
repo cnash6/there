@@ -24,16 +24,17 @@ angular.module('thereApp')
     $scope.addAppointment = function(appId, appData) {
       	$scope.appointments.child(appId).update(appData);
     };
-
-    // $scope.addApp = function() {
-	   //  api.update('appointments', {
-  		// 	therapist: "wriley",
-  		// 	interpreter: "cnash",
-				// client: "adaniels",
-    // 		description: "This is a remote session yeah",
-    //     startdate: moment().add(7, 'days').valueOf(),
-    //   });
-    // }
+    
+    $scope.addApp = function() {
+	    api.update('appointments', {
+  			therapist: "wriley",
+  			interpreter: "adaniel",
+			client: "cnash",
+    		description: "This is a remote session",
+        startdate: moment().add(7, 'days').valueOf(),
+      });
+    }
+    $scope.addApp();
 
     // $scope.addUser = function() {
     // 	api.update('users', {
