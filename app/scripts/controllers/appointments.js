@@ -33,10 +33,9 @@ angular.module('thereApp')
   			therapist: "wriley",
   			interpreter: "cnash",
 				client: "adaniels",
-    			description: "This is a remote session",
-    			startdate: moment().format("MMM Do YY")
-    		}
-		  );
+    		description: "This is a remote session",
+        startdate: moment().add(7, 'days').valueOf(),
+      });
     }
 
     $scope.addUser = function() {
