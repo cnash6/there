@@ -34,7 +34,6 @@ angular.module('thereApp')
         startdate: moment().add(7, 'days').valueOf(),
       });
     }
-    $scope.addApp();
 
     // $scope.addUser = function() {
     // 	api.update('users', {
