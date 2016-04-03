@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="thereApp">
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="thereApp">
+  <body >
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -22,7 +22,7 @@
     <!-- Add your site or application content here -->
 
     <div ng-controller="MainCtrl">
-    <div class="header">
+    <header class="header">
       <div class="navbar navbar-default" role="navigation">
         <div class="container-fluid">
           <div class="navbar-header">
@@ -47,15 +47,15 @@
           </div>
         </div>
       </div>
-    </header class="header">
+    </header>
 
     <div ng-view=""></div>
 
-    <div class="footer">
+    <footer class="footer">
       <div class="container">
         <p><span class="glyphicon glyphicon-heart"></span> from the tHERE team</p>
       </div>
-    </div>
+    </footer>
 
   </div>
 
@@ -91,13 +91,13 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/appointments.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/people.js"></script>
-        <script src="scripts/controllers/session.js"></script>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/appointments.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/people.js"></script>
+    <script src="scripts/controllers/session.js"></script>
+    <!-- endbuild -->
 
-        <!-- endbuild -->
 </body>
 </html>
