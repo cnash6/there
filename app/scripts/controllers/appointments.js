@@ -8,6 +8,10 @@
  * Controller of the thereApp
  */
 angular.module('thereApp')
-  .controller('AppointmentsCtrl', function ($scope, Appointments) {
+
+  .controller('AppointmentsCtrl', function ($scope, $firebaseArray, Appointments) {
+
+    $scope.appointments = Appointments;
+		$scope.apps = $firebaseArray($scope.appointments);
 
   });
