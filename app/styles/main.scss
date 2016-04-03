@@ -297,4 +297,21 @@ main {
     width: 265px;
 }
 
+.record-btn{
+    position: absolute;
+    left: 10px;
+    top: 60px;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50px;
+    z-index: 1000;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
 
+.record-btn-icon {
+	position: relative;
+    top: 8px;
+}
