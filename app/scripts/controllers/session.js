@@ -25,6 +25,8 @@ angular.module('thereApp')
 			sessionId = $location.search().sessionid;
 		}
 
+    auth.setSessionId(sessionId);
+
 		var user = auth.getCurrentUser();
 		if(!user) {
 			user = {
@@ -34,7 +36,7 @@ angular.module('thereApp')
 		}
 		console.log(user);
 
-		
+
   		$http({
   		    method : "GET",
   		    url : "https://refugeehackthere.herokuapp.com/gettoken",

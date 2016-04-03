@@ -115,7 +115,7 @@ main {
 	}
 
 	.tab-content {
-		padding: 20px;
+		// padding: 20px;
 	}
 }
 
@@ -185,6 +185,19 @@ main {
 .navbar-group--right {
 	display: flex;
 	justify-content:flex-end;
+}
+
+.message-group {
+	display: flex;
+	// flex-flow: column nowrap;
+	flex-direction: column;
+	flex: 0 0 100%;
+	position: relative;
+	padding: 16px;
+	.timestamp {
+		font-size: 11px;
+		color: #666;
+	}
 }
 // .container {
 // 	position: relative;
