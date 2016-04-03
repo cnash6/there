@@ -25,23 +25,23 @@ angular.module('thereApp')
       	$scope.appointments.child(appId).update(appData);
     };
 
-    $scope.addApp = function() {
-	    api.update('appointments', {
-  			therapist: "wriley",
-  			interpreter: "cnash",
-				client: "adaniels",
-    		description: "This is a remote session yeah",
-        startdate: moment().add(7, 'days').valueOf(),
-      });
-    }
+    // $scope.addApp = function() {
+	   //  api.update('appointments', {
+  		// 	therapist: "wriley",
+  		// 	interpreter: "cnash",
+				// client: "adaniels",
+    // 		description: "This is a remote session yeah",
+    //     startdate: moment().add(7, 'days').valueOf(),
+    //   });
+    // }
 
-    $scope.addUser = function() {
-    	api.update('users', {
-  			name: "Anthony Daniel",
-  			role: "client",
-  			imageurl: "https://s3.amazonaws.com/there4u/anthonyd_LThumb.jpg"
-  		}, 'adaniel');
-    }
+    // $scope.addUser = function() {
+    // 	api.update('users', {
+  		// 	name: "Anthony Daniel",
+  		// 	role: "client",
+  		// 	imageurl: "https://s3.amazonaws.com/there4u/anthonyd_LThumb.jpg"
+  		// }, 'adaniel');
+    // }
 
     $scope.goToAppointment = function(app) {
     	$location.path('/session').search({sessionid: app.sessionid});
