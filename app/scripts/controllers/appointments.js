@@ -28,33 +28,32 @@ angular.module('thereApp')
     };
 
     $scope.addApp = function() {
-		api.update('appointments', 
-			{
-    			therapist: "adaniels",
-    			interpreter: "wriley",
-				client: "cnash",
-    			description: "This is a remote session",
-    			startdate: ""  			
-
-    		}
-		);
-    }
+  		api.update('appointments',
+  			{
+      			therapist: "adaniels",
+      			interpreter: "wriley",
+  				  client: "cnash",
+      			description: "This is a remote session",
+      			startdate: moment().valueOf(),
+            enddate: moment().add(7, 'days').valueOf()
+      		}
+  		);
+    };
 
     $scope.addUser = function() {
     	api.update('users', {
-			userId: "wriley",
-			name: "Will Riley",
-			role: "client",
-			imageUrl: "https://s3.amazonaws.com/there4u/headshot.jpg"
-		});
-
+  			userId: "wriley",
+  			name: "Will Riley",
+  			role: "client",
+  			imageUrl: "https://s3.amazonaws.com/there4u/headshot.jpg"
+  		});
     }
 
-    function addProfilePics() {
-    	for (var i = 0; i < $scope.apps.length; i++) {
-
-    		console.log($scope.apps[i]);
-    	}
-    }
+    // function addProfilePics() {
+    // 	for (var i = 0; i < $scope.apps.length; i++) {
+    //
+    // 		console.log($scope.apps[i]);
+    // 	}
+    // }
 
   });
