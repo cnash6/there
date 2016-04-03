@@ -52,8 +52,8 @@
 		  controller: 'SessionCtrl',
 		  controllerAs: 'sessionCtrl'
 		})
-		.when('/appointment/created', {
-		  templateUrl: 'views/createapptmt.html',
+		.when('/appointment/create', {
+		  templateUrl: 'views/create-appointment.html',
 		  controller: 'CreateAppointmentCtrl',
 		  controllerAs: 'createAppointmentCtrl'
 		})
