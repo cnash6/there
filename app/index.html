@@ -42,8 +42,9 @@
                             <li ng-class="{'active': isActivePage('/')}"><a ng-href="#/">Appointments</a></li>
                             <li ng-class="{'active': isActivePage('/session')}"><a ng-href="#/session">Session</a></li>
                             <li ng-class="{'active': isActivePage('/createApptmt')}"><a ng-href="#/createApptmt">Create Appointment</a></li>
-                            <li class="dropdown"><a ng-href="#/createApptmt">Jon Vausmach</a></li>
-                        </ul>                            
+                            <li ng-class="{'active': isActivePage('/login'), 'dropdown': true}" header-account>
+                            </li>
+                        </ul>
                       </div>
                     </div>
                 </div>
@@ -93,6 +94,7 @@
     <script src="scripts/controllers/people.js"></script>
     <script src="scripts/controllers/session.js"></script>
     <script src="scripts/controllers/createapptmt.js"></script>
+    <script src="scripts/controllers/login.js"></script>
 
     <script src="scripts/services/api.js"></script>
     <script src="scripts/services/auth.js"></script>
@@ -102,6 +104,8 @@
     <script src="scripts/directives/session-notes/session-notes.js"></script>
     <script src="scripts/directives/session-messages/session-messages.js"></script>
     <script src="scripts/directives/session-users/session-users.js"></script>
+
+    <script src="scripts/directives/header-account/header-account.js"></script>
 
     <!-- endbuild -->
 

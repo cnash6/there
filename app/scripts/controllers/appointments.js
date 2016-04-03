@@ -35,11 +35,10 @@ angular.module('thereApp')
 
     $scope.addUser = function() {
     	api.update('users', {
-  			userid: "adaniel",
   			name: "Anthony Daniel",
   			role: "client",
   			imageurl: "https://s3.amazonaws.com/there4u/anthonyd_LThumb.jpg"
-  		});
+  		}, 'adaniel');
     }
 
     $scope.goToAppointment = function(app) {
