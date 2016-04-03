@@ -8,17 +8,18 @@
  * Controller of the thereApp
  */
 angular.module('thereApp')
+
   .controller('AppointmentsCtrl', function ($scope, $firebaseArray, Appointments) {
 
-  		$scope.appointments = Appointments;
+    $scope.appointments = Appointments;
 		$scope.apps = $firebaseArray($scope.appointments);
 
-  // 		$scope.appointments.once('value', function(snap) {
-  //  			$scope.apps = snap.val();
-  //  			console.log($scope.apps);
-  //  			$scope.$apply();
-		// });
-		
+    $scope.addAppointment = function(appId, appData) {
+      $scope.appointments.child(appId).update(appData);
+    };
 
+    $scope.addAppointment('app1', {
+      client: 'Sammy'
+    });
 
   });
