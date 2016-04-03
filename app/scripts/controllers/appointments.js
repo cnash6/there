@@ -9,13 +9,14 @@
  */
 angular.module('thereApp')
 
-  .controller('AppointmentsCtrl', function ($scope, $firebaseArray, Appointments, moment) {
+  .controller('AppointmentsCtrl', function ($scope, $firebaseArray, Appointments, moment, api) {
 
-    $scope.appointments = Appointments;
-	$scope.apps = $firebaseArray($scope.appointments);
-	$scope.apps.$loaded().then(function() {
-		addProfilePics();
-	})
+
+    $scope.appointments = api.getRef('appointments');
+	  $scope.apps = $firebaseArray($scope.appointments);
+	  $scope.apps.$loaded().then(function() {
+		      addProfilePics();
+	  })
 
 	$scope.appointments.on("value", function(snap) {
 		addProfilePics()
@@ -27,16 +28,9 @@ angular.module('thereApp')
     };
 
     $scope.addApp = function() {
-    	new Firebase("https://there4you.firebaseio.com/").child('appointments').push().set(
-    		{
-    			therapist: "adaniels",
-    			interpreter: "wriley",
-				client: "cnash",
-    			description: "This is a remote session",
-    			startdate: ""  			
-
-    		}
-    	);
+		api.update('appointments', {
+		  'client': 'Joe'
+		});
     }
 
     $scope.addUser = function() {
@@ -56,10 +50,5 @@ angular.module('thereApp')
     		console.log($scope.apps[i]);
     	}
     }
-    // $scope.addAppointment('app1', {
-    //   client: 'Big Boss'
-    // });
-
-
 
   });
