@@ -56,6 +56,7 @@ angular.module('thereApp')
 			    session.subscribe(event.stream, 'theirCamDiv', {
 			      insertMode: 'append'
 			    });
+			    console.log(event.stream.connection)
 			  }
 			});
 			session.connect(token, function(error) {
@@ -64,8 +65,7 @@ angular.module('thereApp')
 				} else {
 				  	session.publish('myCamDiv', {
 				      width: '100%',
-				      height: '600px',
-				      name: 'client'
+				      height: '600px'
 				    });
 				}
 			});
