@@ -29,13 +29,13 @@ app.get("/generatesession", function(req, res) {
 	});
 })
 
-app.post("/startArchive", function(req, res) {
-	sessionId = req.params.sessionId;
-	opentok.startArchive(sessionId, { name: 'Important Presentation' }, function(err, archive) {
+app.get("/startArchive", function(req, res) {
+	sessionId = req.query.sessionid;
+
+	opentok.startArchive(sessionId, {}, function(err, archive) {
 	  if (err) {
 	    return console.log(err);
 	  } else {
-	    // The id property is useful to save off into a database
 	    console.log("new archive:" + archive.id);
 	    res.send({archiveid: archive.id})
 	  }

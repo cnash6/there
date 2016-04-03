@@ -1,7 +1,7 @@
-<div ng-repeat="message in messages">
-  <div>{{message.sender}}</div>
-  <div>{{message.text}}</div>
-  <div>{{message.createdAt | date:'medium'}}</div>
+<div ng-repeat="message in messages" class="message-group">
+  <div class="message message-sender">{{message.sender}}</div>
+  <div class="message message-receive">{{message.text}}</div>
+  <div class="timestamp">{{message.createdAt | date:'medium'}}</div>
 </div>
 <div>
   <input type="text" ng-model="message"></input>
