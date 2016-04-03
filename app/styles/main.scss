@@ -7,6 +7,7 @@
 @import "addApptmt";
 // Colors  
 $green: #009688;
+$blue: #03A9F4;
 $black: #000;
 $navbar-bg: $green;
 
@@ -25,6 +26,7 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: #eee;
+	color: #444;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -164,8 +166,15 @@ main {
 			a {
 				border-radius:0;
 			}
+
+			i {
+				color: $green;
+			}
 			&.active {
-				border-bottom-color: blue;
+				border-bottom-color: $blue;
+				i {
+					color: $blue;
+				}
 			}			
 		}		
 	}
@@ -200,7 +209,7 @@ main {
 		text-align: center;
 		border-bottom: 2px solid transparent;
 		&.active {
-			border-bottom-color: blue;
+			border-bottom-color: #009688;
 		}
 	}  
 }
