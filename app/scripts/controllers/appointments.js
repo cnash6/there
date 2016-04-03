@@ -49,11 +49,11 @@ angular.module('thereApp')
   		});
     }
 
-    // function addProfilePics() {
-    // 	for (var i = 0; i < $scope.apps.length; i++) {
-    //
-    // 		console.log($scope.apps[i]);
-    // 	}
-    // }
+    function addProfilePics() {
+    	for (var i = 0; i < $scope.apps.length; i++) {
+
+    		console.log($scope.apps[i]);
+    	}
+    }
 
   });

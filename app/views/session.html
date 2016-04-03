@@ -6,16 +6,22 @@
   <div class="utility-sidebar">
     <div class="utility-sidebar__wrapper">
       <ul class="nav sidebar-tabs" role="tablist">
-        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Chat</a></li>
-        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Notes</a></li>
-        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Active Users</a></li>
+        <li role="presentation" class="active"><a href="#profile" aria-controls="chat" role="tab" data-toggle="tab">
+          <i class="fa fa-comment"></i></a>
+        </li>
+        <li role="presentation"><a href="#messages" aria-controls="notes" role="tab" data-toggle="tab">
+          <i class="fa fa-file-text-o"></i></a>
+        </li>
+        <li role="presentation"><a href="#settings" aria-controls="activeusers" role="tab" data-toggle="tab">
+          <i class="fa fa-users"></i></a>
+        </li>
       </ul>
 
       <!-- Tab panes -->
       <div class="tab-content">
         <div role="tabpanel" class="tab-pane" id="chat">...</div>
         <div role="tabpanel" class="tab-pane" id="notes">...</div>
-        <div role="tabpanel" class="tab-pane" id="activeUsers">...</div>
+        <div role="tabpanel" class="tab-pane" id="activeusers">...</div>
       </div>
 
     </div>
