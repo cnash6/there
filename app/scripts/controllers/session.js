@@ -8,9 +8,18 @@
  * Controller of the thereApp
  */
 angular.module('thereApp')
-  	.controller('SessionCtrl', function ($scope, $rootScope, $location) {
+  	.controller('SessionCtrl', function ($scope, $rootScope, $location, $http) {
 
-	  	console.log($location.search());
+  		$http({
+  		    method : "GET",
+  		    url : "https://refugeehackthere.herokuapp.com/generatesession"
+  		}).then(function mySucces(response) {
+  		    console.log(response);
+  		}, function myError(response) {
+  		    console.log(response.statusText);
+  		});
+
+	  	//console.log($location.search());
 
 		var apiKey = '45548832';
 		var sessionId = '2_MX40NTU0ODgzMn5-MTQ1OTYwNDg0NDg0N35EU3U1cktYY2lhTEJHc3VPQTNXNFY4NGR-UH4';

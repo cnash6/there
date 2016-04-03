@@ -41,6 +41,8 @@
   },
   "dependencies": {
     "angular-material": "^1.0.7",
+    "angular-ui-bootstrap": "^1.2.5",
+    "cors": "^2.7.1",
     "express": "^4.13.4",
     "gzippo": "^0.2.0",
     "imagemin": "^4.0.0",

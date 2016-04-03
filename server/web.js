@@ -1,5 +1,8 @@
 var express = require('express');
+var cors = require('cors')
+
 var app = express();
+app.use(cors())
 
 var API_KEY = "45548832";
 var SECRET = "dd48288c2fc7807cb08dcec77009c0fd45efe205";
@@ -21,7 +24,7 @@ app.get("/generatesession", function(req, res) {
 	    console.log("Error creating session:", error)
 	  } else {
 	    sessionId = session.sessionId;
-	    res.send({SessionId: sessionid}+);
+	    res.send({sessionId: sessionId});
 	  }
 	});
 })

@@ -1,9 +1,9 @@
 <div ng-repeat="message in messages">
   <div>{{message.sender}}</div>
   <div>{{message.text}}</div>
-  <div>{{message.createdAt | date:'long'}}</div>
+  <div>{{message.createdAt | date:'medium'}}</div>
 </div>
 <div>
   <input type="text" ng-model="message"></input>
-  <button ng-click="addMessage(message)"></button>
+  <button ng-click="addMessage(message)">Send</button>
 </div>

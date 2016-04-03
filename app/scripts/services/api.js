@@ -1,10 +1,11 @@
 angular.module('thereApp')
 
-.service('api', function() {
+.service('api', function($firebaseArray) {
   var apiBasePath = 'https://there4you.firebaseio.com/';
 
   return {
     getRef: getRef,
+    getArray: getArray,
     update: update,
     remove: remove
   };
@@ -12,6 +13,11 @@ angular.module('thereApp')
   function getRef(path) {
     var ref = new Firebase(apiBasePath + path);
     return ref;
+  }
+
+  function getArray(path) {
+    var ref = getRef(path);
+    return $firebaseArray(ref);
   }
 
   function update(path, objData, objId) {
