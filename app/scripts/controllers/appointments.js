@@ -29,24 +29,23 @@ angular.module('thereApp')
 
 
     $scope.addApp = function() {
-		api.update('appointments', 
-			{
-    			therapist: "wriley",
-    			interpreter: "cnash",
+	    api.update('appointments', {
+  			therapist: "wriley",
+  			interpreter: "cnash",
 				client: "adaniels",
     			description: "This is a remote session",
     			startdate: moment().format("MMM Do YY")
     		}
-		);
+		  );
     }
 
     $scope.addUser = function() {
     	api.update('users', {
-			userid: "adaniel",
-			name: "Anthony Daniel",
-			role: "client",
-			imageurl: "https://s3.amazonaws.com/there4u/anthonyd_LThumb.jpg"
-		});
+  			userid: "adaniel",
+  			name: "Anthony Daniel",
+  			role: "client",
+  			imageurl: "https://s3.amazonaws.com/there4u/anthonyd_LThumb.jpg"
+  		});
 
     }
 
