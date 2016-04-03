@@ -9,7 +9,6 @@ angular.module('thereApp')
     controller: function($scope, api, moment, auth, $firebaseArray) {
 
       $scope.messages = api.getArray('messages');
-      console.log($scope.messages);
 
       for (var i = 0; i < $scope.messages.length; i++) {
         console.log("test");
