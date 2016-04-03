@@ -116,6 +116,9 @@ main {
 #navbarPrimary {
 	background: #009688;
 	background-image: linear-gradient(-134deg, rgba(0,187,211,0.00) 0%, rgba(0,187,211,0.50) 87%);	
+	display: flex;
+	align-items: center;
+	padding: 0 16px;
 	@include box-shadow( 0, 2px, 1px, rgba($black, 0.2));
 	li {
 		a {
@@ -123,9 +126,19 @@ main {
 		}
 	}
 	.logo {
-		display: inline-block;
-		margin-top: 10px;
+		display: flex;
+		flex:3;
+		justify-content:flex-start;
 	}
+
+	.container-fluid {
+		width: 100%;
+	}
+}
+
+.navbar-group--right {
+	display: flex;
+	justify-content:flex-end;
 }
 // .container {
 // 	position: relative;
