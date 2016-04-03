@@ -24,7 +24,8 @@ html, body {
 body {
 	margin: 0;
 	padding: 0;
-	background-color: #F4F4F4;
+	background-color: #eee;
+	font-family: 'Open Sans', sans-serif;
 }
 
 main {
@@ -121,7 +122,7 @@ main {
 	display: flex;
 	align-items: center;
 	padding: 0 16px;
-	@include box-shadow( 0, 2px, 1px, rgba($black, 0.2));
+	// @include box-shadow( 0, 2px, 1px, rgba($black, 0.2));
 	li {
 		a {
 			color: #fff;
@@ -142,6 +143,15 @@ main {
 
 	.navbar-collapse {
 		flex:1;
+	}
+
+	.navbar-nav {
+		a {
+			&:hover,
+			&:active {
+				background-color: transparent;
+			}
+		}
 	}
 }
 
