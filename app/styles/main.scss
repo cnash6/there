@@ -198,6 +198,15 @@ main {
 		font-size: 11px;
 		color: #666;
 	}
+	&:nth-of-type(even) {
+		text-align: right;
+	}
+
+	.message {
+		border-radius: 4px;
+		background-color: #eee;
+		display: inline-block;
+	}
 }
 // .container {
 // 	position: relative;
