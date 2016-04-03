@@ -27,34 +27,44 @@ angular.module('thereApp')
       	$scope.appointments.child(appId).update(appData);
     };
 
-    $scope.addApp = function() {
-		api.update('appointments', 
-			{
-    			therapist: "adaniels",
-    			interpreter: "wriley",
-				client: "cnash",
-    			description: "This is a remote session",
-    			startdate: ""  			
 
-    		}
-		);
+    $scope.addApp = function() {
+	    api.update('appointments', {
+  			therapist: "wriley",
+  			interpreter: "cnash",
+				client: "adaniels",
+    		description: "This is a remote session",
+        startdate: moment().add(7, 'days').valueOf(),
+      });
     }
 
     $scope.addUser = function() {
     	api.update('users', {
-			userId: "wriley",
-			name: "Will Riley",
-			role: "client",
-			imageUrl: "https://s3.amazonaws.com/there4u/headshot.jpg"
-		});
+  			userid: "adaniel",
+  			name: "Anthony Daniel",
+  			role: "client",
+  			imageurl: "https://s3.amazonaws.com/there4u/anthonyd_LThumb.jpg"
+  		});
 
     }
 
     function addProfilePics() {
-    	for (var i = 0; i < $scope.apps.length; i++) {
-
-    		console.log($scope.apps[i]);
-    	}
+		var ref = new Firebase('https://there4you.firebaseio.com/users');
+		ref.once("value", function(snap) {
+		  	var usersobj = snap.val();
+		  	var users = $.map(usersobj, function(value, index) {
+		  	    return [value];
+		  	});
+		  	console.log(users);
+		  	for (var i = 0; i < $scope.apps.length; i++) {
+		  		for(var j = 0; j < users.length; j++) {
+		  			if ($scope.apps[i].client == users[j].userid) {
+		  				$scope.apps[i].imageurl = users[j].imageurl;
+		  			}
+		  		}
+		  	}
+		  	$scope.$apply();
+		})
     }
 
   });

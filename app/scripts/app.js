@@ -36,6 +36,11 @@
 		  controller: 'SessionCtrl',
 		  controllerAs: 'session'
 		})
+		.when('/createApptmt', {
+		  templateUrl: 'views/createapptmt.html',
+		  controller: 'CreateapptmtCtrl',
+		  controllerAs: 'createApptmt'
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
