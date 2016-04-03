@@ -141,6 +141,7 @@ main {
 	min-height: 100%;
 	display: flex;
 	background-color: #FFF;
+	border-left: 1px solid #ddd;
 
 	.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
 		border: none;
