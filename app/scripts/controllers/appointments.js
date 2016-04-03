@@ -11,8 +11,10 @@ angular.module('thereApp')
 
   .controller('AppointmentsCtrl', function ($scope, $location, moment, api) {
 
-
     $scope.apps = api.getArray('appointments');
+
+
+    $scope.fullnames = [];
 
   	$scope.apps.$ref().on("value", function(snap) {
   		addProfilePics()
@@ -52,11 +54,11 @@ angular.module('thereApp')
   		  	var users = $.map(usersobj, function(value, index) {
   		  	    return [value];
   		  	});
-  		  	console.log(users);
   		  	for (var i = 0; i < $scope.apps.length; i++) {
   		  		for(var j = 0; j < users.length; j++) {
   		  			if ($scope.apps[i].client == users[j].userid) {
   		  				$scope.apps[i].imageurl = users[j].imageurl;
+                $scope.fullnames[users[j].userid] = users[j].name;
   		  			}
   		  		}
   		  	}
@@ -64,5 +66,8 @@ angular.module('thereApp')
   		})
     }
 
+    $scope.getFullName = function(username) {
+        return $scope.fullnames[username];
+    };
 
   });
