@@ -12,8 +12,9 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
   <body >
@@ -39,9 +40,9 @@
                     <div class="collapse navbar-collapse" id="js-navbar-collapse">
                       <div class="navbar-group--right">
                         <ul class="nav navbar-nav">
-                            <li ng-class="{'active': isActivePage('/')}"><a ng-href="#/">Appointments</a></li>
-                            <li ng-class="{'active': isActivePage('/session')}"><a ng-href="#/session">Session</a></li>
-                            <li ng-class="{'active': isActivePage('/createApptmt')}"><a ng-href="#/createApptmt">Create Appointment</a></li>
+                            <li ng-class="{'active': isActivePage('/schedule')}"><a ng-href="#/"><i class="fa fa-calendar-check-o"></i> Schedule</a></li>
+                            <li ng-class="{'active': isActivePage('/session')}"><a ng-href="#/session"><i class="fa fa-users"></i> Talk</a></li>
+                            <li ng-class="{'active': isActivePage('/review')}"><a ng-href="#/review"><i class="fa fa-archive"></i> Review</a></li>
                             <li ng-class="{'active': isActivePage('/login'), 'dropdown': true}" header-account>
                             </li>
                         </ul>
@@ -93,8 +94,9 @@
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/people.js"></script>
     <script src="scripts/controllers/session.js"></script>
-    <script src="scripts/controllers/createapptmt.js"></script>
+    <script src="scripts/controllers/create-appointment.js"></script>
     <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/review.js"></script>
 
     <script src="scripts/services/api.js"></script>
     <script src="scripts/services/auth.js"></script>

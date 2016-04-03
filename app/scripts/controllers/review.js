@@ -9,7 +9,7 @@
  */
 angular.module('thereApp')
 
-  .controller('AppointmentsCtrl', function ($scope, $location, moment, api) {
+  .controller('ReviewCtrl', function ($scope, $location, moment, api) {
 
 
     $scope.apps = api.getArray('appointments');

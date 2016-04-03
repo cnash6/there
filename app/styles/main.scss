@@ -24,7 +24,8 @@ html, body {
 body {
 	margin: 0;
 	padding: 0;
-	background-color: #F4F4F4;
+	background-color: #eee;
+	font-family: 'Open Sans', sans-serif;
 }
 
 main {
@@ -92,6 +93,31 @@ main {
 	min-height: 100%;
 	display: flex;
 	background-color: #FFF;
+
+	.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+		border: none;
+	}	
+
+	.nav-tabs {
+		display: flex;
+		justify-content: center;
+		border-bottom: 1px solid #EEE;
+		li {
+			width: 100%;
+			text-align: center;
+			border-bottom: 2px solid transparent;
+			a {
+				border-radius:0;
+			}
+			&.active {
+				border-bottom-color: blue;
+			}			
+		}		
+	}
+
+	.tab-content {
+		padding: 20px;
+	}
 }
 
 .utility-sidebar__wrapper {
@@ -121,7 +147,7 @@ main {
 	display: flex;
 	align-items: center;
 	padding: 0 16px;
-	@include box-shadow( 0, 2px, 1px, rgba($black, 0.2));
+	// @include box-shadow( 0, 2px, 1px, rgba($black, 0.2));
 	li {
 		a {
 			color: #fff;
@@ -142,6 +168,18 @@ main {
 
 	.navbar-collapse {
 		flex:1;
+	}
+
+	.navbar-nav {
+		li {
+			a {
+				&:hover,
+				&:active,
+				&:visited {
+					background-color: transparent;
+				}
+			}
+		}
 	}
 }
 
