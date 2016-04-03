@@ -1,5 +1,8 @@
 var express = require('express');
+var cors = require('cors')
+
 var app = express();
+app.use(cors())
 
 var API_KEY = "45548832";
 var SECRET = "dd48288c2fc7807cb08dcec77009c0fd45efe205";
@@ -13,7 +16,7 @@ app.listen(process.env.PORT || 5000, function () {
 	app.use(express.static('dist'));
 });
 
-app.get("/getsession", function(req, res) {
+app.get("/generatesession", function(req, res) {
 	console.log(opentok);	
 	var sessionId;
 	opentok.createSession({mediaMode:"routed"}, function(error, session) {
@@ -21,14 +24,18 @@ app.get("/getsession", function(req, res) {
 	    console.log("Error creating session:", error)
 	  } else {
 	    sessionId = session.sessionId;
-	    var tokenOptions = {};
-	    tokenOptions.role = "publisher";
-	    tokenOptions.data = "username=bob";
-	    var token = opentok.generateToken(sessionId, tokenOptions);
-	    console.log("Session ID: " + sessionId);
-	    res.send("SessionId: " + sessionId + "\n\nToken: " + token);
+	    res.send({sessionId: sessionId});
 	  }
 	});
+})
+
+app.get("/gettoken", function(req, res) {
+	console.log(req);
+	var tokenOptions = {};
+	tokenOptions.role = "publisher";
+	tokenOptions.data = "username=bob";
+	var token = opentok.generateToken(sessionId, tokenOptions);
+	res.send({Token: token});
 })
 
 

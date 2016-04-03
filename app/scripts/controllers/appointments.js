@@ -9,7 +9,7 @@
  */
 angular.module('thereApp')
 
-  .controller('AppointmentsCtrl', function ($scope, $firebaseArray, moment, api) {
+  .controller('AppointmentsCtrl', function ($scope, $firebaseArray, $location, moment, api) {
 
 
     $scope.apps = api.getArray('appointments');
@@ -40,6 +40,10 @@ angular.module('thereApp')
   			role: "client",
   			imageurl: "https://s3.amazonaws.com/there4u/anthonyd_LThumb.jpg"
   		});
+    }
+
+    $scope.goToAppointment = function(app) {
+    	$location.path('/session').search({sessionid: app.sessionid});
     }
 
     function addProfilePics() {
