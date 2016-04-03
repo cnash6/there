@@ -24,24 +24,25 @@ angular.module('thereApp')
     $scope.addAppointment = function(appId, appData) {
       	$scope.appointments.child(appId).update(appData);
     };
-
+    
     $scope.addApp = function() {
 	    api.update('appointments', {
   			therapist: "wriley",
-  			interpreter: "cnash",
-				client: "adaniels",
-    		description: "This is a remote session yeah",
+  			interpreter: "adaniel",
+			client: "cnash",
+    		description: "This is a remote session",
         startdate: moment().add(7, 'days').valueOf(),
       });
     }
+    $scope.addApp();
 
-    $scope.addUser = function() {
-    	api.update('users', {
-  			name: "Anthony Daniel",
-  			role: "client",
-  			imageurl: "https://s3.amazonaws.com/there4u/anthonyd_LThumb.jpg"
-  		}, 'adaniel');
-    }
+    // $scope.addUser = function() {
+    // 	api.update('users', {
+  		// 	name: "Anthony Daniel",
+  		// 	role: "client",
+  		// 	imageurl: "https://s3.amazonaws.com/there4u/anthonyd_LThumb.jpg"
+  		// }, 'adaniel');
+    // }
 
     $scope.goToAppointment = function(app) {
     	$location.path('/session').search({sessionid: app.sessionid});
@@ -72,7 +73,7 @@ angular.module('thereApp')
 
     $scope.myUpcomingAppointments = function(value, index, array) {
       var currentUser = auth.getCurrentUser();
-      return currentUser && (value.therapist === currentUser.username || value.interpretter === currentUser.username || value.client === currentUser.username || value.observer === currentUser.username) ;
+      return currentUser && (value.therapist === currentUser.username || value.interpreter === currentUser.username || value.client === currentUser.username || value.observer === currentUser.username) ;
     };
 
   });
