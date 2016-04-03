@@ -21,7 +21,7 @@ app.get("/generatesession", function(req, res) {
 	    console.log("Error creating session:", error)
 	  } else {
 	    sessionId = session.sessionId;
-	    res.send({SessionId: sessionid}+);
+	    res.send({SessionId: sessionid});
 	  }
 	});
 })

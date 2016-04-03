@@ -8,7 +8,17 @@
  * Controller of the thereApp
  */
 angular.module('thereApp')
-  	.controller('SessionCtrl', function ($scope, $rootScope, $location) {
+  	.controller('SessionCtrl', function ($scope, $rootScope, $location, $http) {
+
+  		$http({
+  		    method : "GET",
+  		    url : "/gettoken",
+  		    port: 5000
+  		}).then(function mySucces(response) {
+  		    console.log(response);
+  		}, function myError(response) {
+  		    console.log(response.statusText);
+  		});
 
 	  	console.log($location.search());
 
