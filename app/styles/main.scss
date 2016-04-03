@@ -79,7 +79,7 @@ main {
 }
 
 .utility-sidebar {
-	flex: 0 0 300px;
+	flex: 0 0 330px;
 	position: relative;
 	min-height: 100%;
 	display: flex;
@@ -87,8 +87,22 @@ main {
 
 .utility-sidebar__wrapper {
 	position: fixed;
-	width: 300px;
+	width: 330px;
 	height: 100%;
+}
+
+.sidebar-tabs {
+	display: flex;
+	justify-content: center;
+	border-bottom: 1px solid #EEE;
+	li {
+		width: calc(100%/3);
+		text-align: center;
+		border-bottom: 2px solid transparent;
+		&.active {
+			border-bottom-color: blue;
+		}
+	}
 }
 // .container {
 // 	position: relative;
