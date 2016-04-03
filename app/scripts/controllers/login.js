@@ -10,11 +10,7 @@
 angular.module('thereApp')
   .controller('LoginCtrl', function ($scope, auth) {
 
-    console.log('cool');
-
     $scope.login = auth.login;
-
-    console.log('dude');
 
 
   });

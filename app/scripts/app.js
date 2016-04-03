@@ -25,13 +25,23 @@
 		.when('/people', {
 			templateUrl: 'views/people.html',
 			controller: 'PeopleCtrl',
-			controllerAs: 'people'
+			controllerAs: 'peopleCtrl'
 		})
     .when('/', {
 			templateUrl: 'views/appointments.html',
 			controller: 'AppointmentsCtrl',
-			controllerAs: 'appointments'
+			controllerAs: 'appointmentsCtrl'
 		})
+    .when('/schedule', {
+      templateUrl: 'views/appointments.html',
+      controller: 'AppointmentsCtrl',
+      controllerAs: 'appointmentsCtrl'
+    })
+    .when('/review', {
+      templateUrl: 'views/review.html',
+      controller: 'ReviewCtrl',
+      controllerAs: 'reviewCtrl'
+    })
     .when('/login', {
       templateUrl: 'views/login.html',
       controller: 'LoginCtrl',
@@ -40,12 +50,12 @@
 		.when('/session', {
 		  templateUrl: 'views/session.html',
 		  controller: 'SessionCtrl',
-		  controllerAs: 'session'
+		  controllerAs: 'sessionCtrl'
 		})
-		.when('/createApptmt', {
+		.when('/appointment/created', {
 		  templateUrl: 'views/createapptmt.html',
-		  controller: 'CreateapptmtCtrl',
-		  controllerAs: 'createApptmt'
+		  controller: 'CreateAppointmentCtrl',
+		  controllerAs: 'createAppointmentCtrl'
 		})
 		.otherwise({
 			redirectTo: '/'

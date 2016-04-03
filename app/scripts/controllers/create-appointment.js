@@ -8,7 +8,7 @@
  * Controller of the thereApp
  */
 angular.module('thereApp')
-  .controller('CreateapptmtCtrl', function (moment, api) {
+  .controller('CreateAppointmentCtrl', function (moment, api) {
 
 
   });
