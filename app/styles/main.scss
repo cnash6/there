@@ -38,6 +38,12 @@ main {
 	min-height: 100vh;
 }
 
+.btn {
+	display: flex;
+	align-items: center;
+	flex:1;
+}
+
 #chatWrapper {
 	min-height: 100%;
 }
@@ -199,7 +205,8 @@ main {
 	}  
 }
 
-.message-group {
+.message-group,
+.notes-group {
 	display: flex;
 	// flex-flow: column nowrap;
 	flex-direction: column;
@@ -208,7 +215,7 @@ main {
 	padding: 16px;
 	.timestamp {
 		font-size: 11px;
-		color: #666;
+		color: #999;
 	}
 	&:nth-of-type(even) {
 		text-align: right;
@@ -216,13 +223,22 @@ main {
 
 	.message {
 		border-radius: 4px;
+		padding: 0 5px;
 		background-color: #eee;
 		display: inline-block;
+		margin-bottom: 3px;
 	}
 }
 
 .sidebar-heading {
 	padding: 10px 16px;
+}
+
+.notes-group {
+	border-top: 1px solid #eee;
+	&:nth-of-type(even) {
+		text-align: left;
+	}
 }
 
 // .container {
@@ -265,7 +281,8 @@ main {
 	width: 100%;
 	position: absolute;
 	bottom:30px;
-	padding: 6px;
+	padding: 10px 6px;
+	background-color: #f4f4f4;
 	.form-control {
 		margin-right: 10px;
 	}
