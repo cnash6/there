@@ -14,4 +14,12 @@ angular.module('thereApp')
     $scope.appointments = Appointments;
 		$scope.apps = $firebaseArray($scope.appointments);
 
+    $scope.addAppointment = function(appId, appData) {
+      $scope.appointments.child(appId).update(appData);
+    };
+
+    $scope.addAppointment('app1', {
+      client: 'Sammy'
+    });
+
   });
