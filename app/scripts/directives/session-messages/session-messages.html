@@ -4,7 +4,7 @@
   <div class="message message-receive">{{message.text}}</div>
   <div class="timestamp">{{message.createdAt | date:'medium'}}</div>
 </div>
-<div class="form-group chat-input">
+<div class="form-group flex-form-group">
   <input type="text" ng-model="message" class="form-control"></input>
   <a ng-click="addMessage(message)" class="btn btn-success">Send</a>
 </div>
