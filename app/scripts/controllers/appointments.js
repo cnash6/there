@@ -18,8 +18,10 @@ angular.module('thereApp')
       $scope.appointments.child(appId).update(appData);
     };
 
-    $scope.addAppointment('app1', {
-      client: 'Big Boss'
-    });
+    // $scope.addAppointment('app1', {
+    //   client: 'Big Boss'
+    // });
+
+  
 
   });

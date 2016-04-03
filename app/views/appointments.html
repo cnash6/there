@@ -5,10 +5,13 @@
 			<span class="appointment-date col-xs-6">{{app.startdate}} - {{app.enddate}}</span>
 		</div>
 		<div class="row">
-			This is the description of this appointment
+			<span class="col-xs-12 appointment-details">This is the description of this appointment</span>
 		</div>
 		<div class="row">
-			Therapist:  {{app.therapist}} | Interpreter: {{app.interpretter}}
+			<span class="col-xs-12 appointment-users">
+				<span ng-if="app.therapist">Therapist:  {{app.therapist}} |</span>
+				<span ng-if="app.interpreter">Interpreter: {{app.interpreter}}</span>
+			</span>
 		</div>
 	</div>
 
