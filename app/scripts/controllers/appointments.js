@@ -9,7 +9,8 @@
  */
 angular.module('thereApp')
 
-  .controller('AppointmentsCtrl', function ($scope, $firebaseArray, api) {
+  .controller('AppointmentsCtrl', function ($scope, $firebaseArray, moment, api) {
+
 
     $scope.appointments = api.getRef('appointments');
 	  $scope.apps = $firebaseArray($scope.appointments);
@@ -18,9 +19,7 @@ angular.module('thereApp')
 	  })
 
 	$scope.appointments.on("value", function(snap) {
-		for (var i = 0; i < $scope.apps.length; i++) {
-			console.log($scope.apps[i]);
-		};
+		addProfilePics()
   		//console.log(snap.val());
 	});
 
@@ -29,13 +28,31 @@ angular.module('thereApp')
     };
 
     $scope.addApp = function() {
-      api.update('appointments', {
-        'client': 'Joe'
-      });
+		api.update('appointments', 
+			{
+    			therapist: "adaniels",
+    			interpreter: "wriley",
+				client: "cnash",
+    			description: "This is a remote session",
+    			startdate: ""  			
+
+    		}
+		);
+    }
+
+    $scope.addUser = function() {
+    	api.update('users', {
+			userId: "wriley",
+			name: "Will Riley",
+			role: "client",
+			imageUrl: "https://s3.amazonaws.com/there4u/headshot.jpg"
+		});
+
     }
 
     function addProfilePics() {
     	for (var i = 0; i < $scope.apps.length; i++) {
+
     		console.log($scope.apps[i]);
     	}
     }

@@ -1,6 +1,6 @@
 angular.module('thereApp')
 
-.service("api", function() {
+.service('api', function() {
   var apiBasePath = 'https://there4you.firebaseio.com/';
 
   return {
@@ -25,8 +25,9 @@ angular.module('thereApp')
     }
   }
 
-  function remove(path, objId, objData) {
-
+  function remove(path, objId) {
+    var ref = getRef(path)
+    ref.child(objId).remove();
   }
 
 });
