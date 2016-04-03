@@ -5,7 +5,19 @@
   </div>
   <div class="utility-sidebar">
     <div class="utility-sidebar__wrapper">
-      Content
+      <ul class="nav sidebar-tabs" role="tablist">
+        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Chat</a></li>
+        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Notes</a></li>
+        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Active Users</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane" id="chat">...</div>
+        <div role="tabpanel" class="tab-pane" id="notes">...</div>
+        <div role="tabpanel" class="tab-pane" id="activeUsers">...</div>
+      </div>
+
     </div>
   </div>
 </div>
