@@ -72,7 +72,7 @@ angular.module('thereApp')
 
     $scope.myUpcomingAppointments = function(value, index, array) {
       var currentUser = auth.getCurrentUser();
-      return currentUser && (value.therapist === currentUser.username || value.interpretter === currentUser.username || value.client === currentUser.username || value.observer === currentUser.username) ;
+      return currentUser && (value.therapist === currentUser.username || value.interpreter === currentUser.username || value.client === currentUser.username || value.observer === currentUser.username) ;
     };
 
   });
