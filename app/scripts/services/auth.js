@@ -20,7 +20,7 @@ angular.module('thereApp')
         api.update('users', {
             role: 'therapist',
             username: username,
-            name: 'Joe'
+            name: 'Joe Smith'
         }, username).then(function() {
           api.getValue('users', username).then(function(user) {
               setCurrentUser(user);
@@ -37,10 +37,8 @@ angular.module('thereApp')
   }
 
   function logout() {
-    console.log('auth logout');
-    $cookies.remove('currentUser');
-
     currentUser = null;
+    $cookies.remove('currentUser');
     $rootScope.$broadcast('changeCurrentUser', null);
   }
 

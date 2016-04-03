@@ -24,17 +24,18 @@ angular.module('thereApp')
     $scope.addAppointment = function(appId, appData) {
       	$scope.appointments.child(appId).update(appData);
     };
-    
+
     $scope.addApp = function() {
 	    api.update('appointments', {
-  			therapist: "wriley",
+  			therapist: "cnash",
   			interpreter: "adaniel",
-			client: "cnash",
+			  client: "wriley",
     		description: "This is a remote session",
-        startdate: moment().add(7, 'days').valueOf(),
+        sessionid: "2_MX40NTU0ODgzMn5-MTQ1OTcwMjY2NzA1NX5FT2h1ZnZQendJMFNSZkdQWDcwQThZNmN-UH4",
+        startdate: moment().add(2, 'days').valueOf(),
       });
     }
-    $scope.addApp();
+    //$scope.addApp();
 
     // $scope.addUser = function() {
     // 	api.update('users', {
@@ -68,6 +69,7 @@ angular.module('thereApp')
     }
 
     $scope.getFullName = function(username) {
+        console.log($scope.fullnames);
         return $scope.fullnames[username];
     };
 

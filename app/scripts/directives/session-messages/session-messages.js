@@ -14,12 +14,13 @@ angular.module('thereApp')
         console.log("test");
         console.log($scope.messages[i]);
       }
-        
+
 
       $scope.addMessage = function(message) {
+        var cu = auth.getCurrentUser();
 
         api.update('messages', {
-          sender: auth.getCurrentUser(),
+          sender: cu ? cu.name : '',
           text: message,
           createdAt: moment().valueOf(),
           session: auth.getSessionId()
