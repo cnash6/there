@@ -8,12 +8,17 @@
  * Controller of the thereApp
  */
 angular.module('thereApp')
-  .controller('AppointmentsCtrl', function ($scope, Appointments) {
-  		$scope.appointments = Appointments;
+  .controller('AppointmentsCtrl', function ($scope, $firebaseArray, Appointments) {
 
-  		$scope.appointments.on("value", function(snapshot) {
-  		  console.log(snapshot.val());
-  		}, function (errorObject) {
-  		  console.log("The read failed: " + errorObject.code);
-  		});
+  		$scope.appointments = Appointments;
+		$scope.apps = $firebaseArray($scope.appointments);
+
+  // 		$scope.appointments.once('value', function(snap) {
+  //  			$scope.apps = snap.val();
+  //  			console.log($scope.apps);
+  //  			$scope.$apply();
+		// });
+		
+
+
   });
