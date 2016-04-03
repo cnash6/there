@@ -61,7 +61,6 @@ angular.module('thereApp')
       ref.child(objId)
       .update(objData, function(err) {
         if (err) {
-          console.log(err);
           d.reject(err);
         } else {
           d.resolve();
