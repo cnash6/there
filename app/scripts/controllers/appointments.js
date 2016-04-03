@@ -9,7 +9,7 @@
  */
 angular.module('thereApp')
 
-  .controller('AppointmentsCtrl', function ($scope, $firebaseArray, Appointments, moment, api) {
+  .controller('AppointmentsCtrl', function ($scope, $firebaseArray, moment, api) {
 
 
     $scope.appointments = api.getRef('appointments');
@@ -28,20 +28,26 @@ angular.module('thereApp')
     };
 
     $scope.addApp = function() {
-		api.update('appointments', {
-		  'client': 'Joe'
-		});
+		api.update('appointments', 
+			{
+    			therapist: "adaniels",
+    			interpreter: "wriley",
+				client: "cnash",
+    			description: "This is a remote session",
+    			startdate: ""  			
+
+    		}
+		);
     }
 
     $scope.addUser = function() {
-    	new Firebase("https://there4you.firebaseio.com/").child('users').push().set(
-    		{
-    			userId: "cnash",
-    			name: "Christian Nash",
-    			role: "client",
-    			imageUrl: "https://s3.amazonaws.com/there4u/headshot.jpg"
-    		}
-    	);
+    	api.update('users', {
+			userId: "wriley",
+			name: "Will Riley",
+			role: "client",
+			imageUrl: "https://s3.amazonaws.com/there4u/headshot.jpg"
+		});
+
     }
 
     function addProfilePics() {
