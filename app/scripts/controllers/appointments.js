@@ -69,7 +69,6 @@ angular.module('thereApp')
     }
 
     $scope.getFullName = function(username) {
-        console.log($scope.fullnames);
         return $scope.fullnames[username];
     };
 
