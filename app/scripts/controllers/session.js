@@ -29,7 +29,7 @@ angular.module('thereApp')
 		if(!user) {
 			user = {
 				name: "fallback user",
-				role: "interpreter"
+				role: "client"
 			}
 		}
 		console.log(user);
@@ -64,11 +64,11 @@ angular.module('thereApp')
 			  streamCreated: function(event) {
 			  	var data = event.stream.connection.data;
 			  	console.log(data);
-			  	if (data.userrole == "interpreter") {
+			  	if (data == "interpreter") {
 			  		session.subscribe(event.stream, 'theirCamDiv', {
 						width: '100%',
-				      	height: '100%',
-			  		  	insertMode: 'append'
+				      	height: '100%'
+			  		  	//insertMode: 'append'
 			  		});
 			  	} else {
 			  		session.subscribe(event.stream, 'mainCamDiv', {
