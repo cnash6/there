@@ -4,7 +4,7 @@
   <div class="message message-receive">{{message.text}}</div>
   <div class="timestamp">{{message.createdAt | date:'medium'}}</div>
 </div>
-<div>
-  <input type="text" ng-model="message"></input>
-  <button class="btn btn-primary" ng-click="addMessage(message)">Send</button>
+<div class="form-group">
+  <input type="text" ng-model="message" class="form-control"></input>
+  <button ng-click="addMessage(message)">Send</button>
 </div>
