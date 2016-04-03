@@ -13,7 +13,7 @@ app.listen(process.env.PORT || 5000, function () {
 	app.use(express.static('dist'));
 });
 
-app.get("/getsession", function(req, res) {
+app.get("/generatesession", function(req, res) {
 	console.log(opentok);	
 	var sessionId;
 	opentok.createSession({mediaMode:"routed"}, function(error, session) {
@@ -21,14 +21,18 @@ app.get("/getsession", function(req, res) {
 	    console.log("Error creating session:", error)
 	  } else {
 	    sessionId = session.sessionId;
-	    var tokenOptions = {};
-	    tokenOptions.role = "publisher";
-	    tokenOptions.data = "username=bob";
-	    var token = opentok.generateToken(sessionId, tokenOptions);
-	    console.log("Session ID: " + sessionId);
-	    res.send("SessionId: " + sessionId + "\n\nToken: " + token);
+	    res.send({SessionId: sessionid}+);
 	  }
 	});
+})
+
+app.get("/gettoken", function(req, res) {
+	console.log(req);
+	var tokenOptions = {};
+	tokenOptions.role = "publisher";
+	tokenOptions.data = "username=bob";
+	var token = opentok.generateToken(sessionId, tokenOptions);
+	res.send({Token: token});
 })
 
 
