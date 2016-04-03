@@ -73,7 +73,8 @@ angular.module('thereApp')
 			  	} else {
 			  		session.subscribe(event.stream, 'mainCamDiv', {
 			  			width: '100%',
-				      	height: '100%'
+				      	height: '100%',
+				      	insertMode: 'replace'
 			  		});
 			  	}
 
@@ -89,6 +90,32 @@ angular.module('thereApp')
 				    });
 				}
 			});
+		}
+
+		$scope.startArchive = function() {
+
+			if($(".glyphicon-record").length > 0) {
+				$(".record-btn-icon").removeClass("glyphicon-record");
+				$(".record-btn-icon").addClass("glyphicon-stop");
+			} else {
+				$(".record-btn-icon").removeClass("glyphicon-stop");
+				$(".record-btn-icon").addClass("glyphicon-record");
+			}
+			
+			// $http({
+			//     method : "GET",
+			//     url : "https://refugeehackthere.herokuapp.com/startArchive",
+	  // 		    params: {
+	  // 		    	sessionid: sessionId
+	  // 		    }
+			// }).then(function mySucces(response) {
+			//     console.log(response);
+
+			// }, function myError(response) {
+			//     console.log(response.statusText);
+		
+
+			// });
 		}
 
   	});
