@@ -2,8 +2,7 @@
 	<h3>Create A New Appointment</h3>
 	<form>
 	  <div class="form-group">
-	    <label for="exampleInputEmail1">Email address</label>
-	    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+	    <input name="client" id="client" type="text" placeholder="enter a user" ng-model="selected" typeahead="user for user in test | filter:$viewValue | limitTo:8" class="form-control">
 	  </div>
 	  <div class="form-group">
 	    <label for="exampleInputPassword1">Password</label>

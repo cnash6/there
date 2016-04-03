@@ -19,7 +19,9 @@ angular.module('thereApp')
     api.exists('users', username).then(function(exists) {
       if (!exists) {
         api.update('users', {
-            role: 'therapist'
+            role: 'therapist',
+            username: username,
+            name: 'Joe'
         }, username).then(function() {
           api.getValue('users', username).then(function(user) {
               currentUser = user;

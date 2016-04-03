@@ -12,5 +12,4 @@ angular.module('thereApp')
 
     $scope.login = auth.login;
 
-
   });
