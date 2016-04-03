@@ -1,0 +1,23 @@
+<!-- <button class="btn btn-primary"ng-click="addApp()">Add Appointment</button>
+<button class="btn btn-primary"ng-click="addUser()">Add User</button> -->
+<div class="appointments-list-container">
+	<div ng-repeat="app in apps | orderBy: '-startdate' " class="appointment" ng-click="goToAppointment(app)">
+		<div class="appointment-profile-pic" ng-style="{'background-image': 'url(' + app.imageurl + ')'}">
+		</div>
+		<div class="appointment-content">
+			<div class="row">
+				<span class="appointment-client col-xs-6">{{app.client}}</span>
+				<span class="appointment-date col-xs-6">{{app.startdate | countdown}}</span>
+			</div>
+			<div class="row">
+				<span class="col-xs-12 appointment-details">{{app.description}}</span>
+			</div>
+			<div class="row">
+				<span class="col-xs-12 appointment-users">
+					<span ng-if="app.therapist">Therapist:  {{app.therapist}} |</span>
+					<span ng-if="app.interpreter">Interpreter: {{app.interpreter}}</span>
+				</span>
+			</div>
+		</div>
+	</div>
+</div>
