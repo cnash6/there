@@ -30,13 +30,13 @@ app.get("/generatesession", function(req, res) {
 })
 
 app.get("/gettoken", function(req, res) {
-	console.log(req);
+	var sessionId = req.query.sessionid;
+	var userrole = req.query.role;
 	var tokenOptions = {};
 	tokenOptions.role = "publisher";
-	tokenOptions.data = "username=bob";
+	tokenOptions.data = "name="+userrole;
 	var token = opentok.generateToken(sessionId, tokenOptions);
-	res.send({Token: token});
-})
+	res.send({token: token});
+}) 
 
-
-
+//https://refugeehackthere.herokuapp.com/gettoken?role=client&sessionid=2_MX40NTU0ODgzMn5-MTQ1OTYwNDg0NDg0N35EU3U1cktYY2lhTEJHc3VPQTNXNFY4NGR-UH4
