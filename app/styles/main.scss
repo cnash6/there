@@ -24,6 +24,7 @@ html, body {
 body {
 	margin: 0;
 	padding: 0;
+	background-color: #F4F4F4;
 }
 
 main {
@@ -88,6 +89,7 @@ main {
 	position: relative;
 	min-height: 100%;
 	display: flex;
+	background-color: #FFF;
 }
 
 .utility-sidebar__wrapper {
@@ -114,6 +116,11 @@ main {
 #navbarPrimary {
 	background-color: $navbar-bg;
 	@include box-shadow( 0, 1px, 3px, rgba($black, 0.5));
+	li {
+		a {
+			color: #fff;
+		}
+	}
 }
 // .container {
 // 	position: relative;
