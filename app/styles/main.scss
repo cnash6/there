@@ -173,7 +173,8 @@ main {
 	.navbar-nav {
 		a {
 			&:hover,
-			&:active {
+			&:active,
+			&:hover {
 				background-color: transparent;
 			}
 		}
