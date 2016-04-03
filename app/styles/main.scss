@@ -21,11 +21,15 @@ body {
 
 main {
 	position: relative;
-	min-height: 100%;  
+	min-height: 100%;
+	padding-top: 51px;
+}
+
+.y-full {
+	min-height: 100vh;
 }
 
 #chatWrapper {
-	position: relative;
 	min-height: 100%;
 }
 
@@ -68,6 +72,21 @@ main {
     right: 0px;
 }
 
+.video-container {
+	flex:1;
+}
+
+.utility-sidebar {
+	flex: 0 0 300px;
+	position: relative;
+	min-height: 100%;
+	display: flex;
+}
+
+.utility-sidebar__wrapper {
+	position: fixed;
+	height: 100%;
+}
 // .container {
 // 	position: relative;
 // 	max-width: 100%;
