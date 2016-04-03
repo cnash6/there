@@ -9,6 +9,8 @@
 	margin-bottom: 15px;
 	font-size: 18px;
 	padding: 10px;
+	position: relative;
+	height: 100px;
 }
 
 .appointment-client{
@@ -17,5 +19,23 @@
 
 .appointment-date {
 	text-align: right;
+}
+
+.appointment-profile-pic {
+	position: absolute;
+	top:10px;
+	bottom: 10px;
+	left: 10px;
+	width: 80px;
+	border-radius: 100px;
+	background-color: grey;
+}
+
+.appointment-content {
+	position: absolute;
+	top:10px;
+	bottom: 10px;
+	left: 100px;
+	right: 10px;
 }
 

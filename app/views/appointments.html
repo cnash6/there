@@ -1,20 +1,26 @@
+
+<button class="btn btn-primary"ng-click="addApp()">Click Me</button>
 <div class="appointments-list-container">
 	<div ng-repeat="app in apps" class="appointment">
-		<div class="row">
-			<span class="appointment-client col-xs-6">{{app.client}}</span>
-			<span class="appointment-date col-xs-6">{{app.startdate}} - {{app.enddate}}</span>
+		<div class="appointment-profile-pic">
+
 		</div>
-		<div class="row">
-			<span class="col-xs-12 appointment-details">This is the description of this appointment</span>
-		</div>
-		<div class="row">
-			<span class="col-xs-12 appointment-users">
-				<span ng-if="app.therapist">Therapist:  {{app.therapist}} |</span>
-				<span ng-if="app.interpreter">Interpreter: {{app.interpreter}}</span>
-			</span>
+		<div class="appointment-content">
+			<div class="row">
+				<span class="appointment-client col-xs-6">{{app.client}}</span>
+				<span class="appointment-date col-xs-6">{{app.startdate}}</span>
+			</div>
+			<div class="row">
+				<span class="col-xs-12 appointment-details">This is the description of this appointment</span>
+			</div>
+			<div class="row">
+				<span class="col-xs-12 appointment-users">
+					<span ng-if="app.therapist">Therapist:  {{app.therapist}} |</span>
+					<span ng-if="app.interpreter">Interpreter: {{app.interpreter}}</span>
+				</span>
+			</div>
 		</div>
 	</div>
-
 </div>
 
 
