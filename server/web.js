@@ -34,7 +34,11 @@ app.get("/gettoken", function(req, res) {
 	var userrole = req.query.role;
 	var tokenOptions = {};
 	tokenOptions.role = "publisher";
-	tokenOptions.data = "name="+userrole;
+	tokenOptions.data = {
+		name: "big boi",
+		other: "finally";
+	}
+
 	var token = opentok.generateToken(sessionId, tokenOptions);
 	res.send({token: token});
 }) 
