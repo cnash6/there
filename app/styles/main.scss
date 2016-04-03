@@ -86,59 +86,7 @@ main {
 	position: relative;
 }
 
-.utility-sidebar {
-	flex: 0 0 330px;
-	position: relative;
-	min-height: 100%;
-	display: flex;
-	background-color: #FFF;
 
-	.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
-		border: none;
-	}	
-
-	.nav-tabs {
-		display: flex;
-		justify-content: center;
-		border-bottom: 1px solid #EEE;
-		li {
-			width: 100%;
-			text-align: center;
-			border-bottom: 2px solid transparent;
-			a {
-				border-radius:0;
-			}
-			&.active {
-				border-bottom-color: blue;
-			}			
-		}		
-	}
-
-	.tab-content {
-		// padding: 20px;
-	}
-}
-
-.utility-sidebar__wrapper {
-	position: fixed;
-	width: 330px;
-	height: 100%;
-}
-
-.sidebar-tabs {
-	display: flex;
-	justify-content: center;
-	border-bottom: 1px solid #EEE;
-	li {
-		// width: calc(100%/3);
-		width: 100%;
-		text-align: center;
-		border-bottom: 2px solid transparent;
-		&.active {
-			border-bottom-color: blue;
-		}
-	}  
-}
 
 #navbarPrimary {
 	background: #009688;
@@ -187,6 +135,69 @@ main {
 	justify-content:flex-end;
 }
 
+.utility-sidebar {
+	flex: 0 0 330px;
+	position: relative;
+	min-height: 100%;
+	display: flex;
+	background-color: #FFF;
+
+	.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+		border: none;
+	}	
+
+	.nav-tabs {
+		display: flex;
+		justify-content: center;
+		border-bottom: 1px solid #EEE;
+		li {
+			width: 100%;
+			text-align: center;
+			border-bottom: 2px solid transparent;
+			a {
+				border-radius:0;
+			}
+			&.active {
+				border-bottom-color: blue;
+			}			
+		}		
+	}
+
+	.tab-content {
+		display: flex;
+		flex-flow: column nowrap;
+		flex:1;
+	}
+
+	.flex-height {
+		flex:1;
+		height: 100%;
+		display: flex;  
+		flex-flow: column wrap;
+	}
+}
+
+.utility-sidebar__wrapper {
+	position: fixed;
+	width: 330px;
+	height: 100%;
+}
+
+.sidebar-tabs {
+	display: flex;
+	justify-content: center;
+	border-bottom: 1px solid #EEE;
+	li {
+		// width: calc(100%/3);
+		width: 100%;
+		text-align: center;
+		border-bottom: 2px solid transparent;
+		&.active {
+			border-bottom-color: blue;
+		}
+	}  
+}
+
 .message-group {
 	display: flex;
 	// flex-flow: column nowrap;
@@ -208,6 +219,7 @@ main {
 		display: inline-block;
 	}
 }
+
 // .container {
 // 	position: relative;
 // 	max-width: 100%;
