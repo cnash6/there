@@ -9,13 +9,13 @@
  */
 angular.module('thereApp')
 
-  .controller('AppointmentsCtrl', function ($scope, $firebaseArray, Appointments) {
+  .controller('AppointmentsCtrl', function ($scope, $firebaseArray, Appointments, api) {
 
     $scope.appointments = Appointments;
-	$scope.apps = $firebaseArray($scope.appointments);
-	$scope.apps.$loaded().then(function() {
-		addProfilePics();
-	})
+	  $scope.apps = $firebaseArray($scope.appointments);
+	  $scope.apps.$loaded().then(function() {
+		      addProfilePics();
+	  })
 
 	$scope.appointments.on("value", function(snap) {
 		for (var i = 0; i < $scope.apps.length; i++) {
@@ -29,7 +29,10 @@ angular.module('thereApp')
     };
 
     $scope.addApp = function() {
-    	new Firebase("https://there4you.firebaseio.com/").child('appointments').push().set({client: "Joe"});
+    	new Firebase("https://there4you.firebaseio.com/")
+      .child('appointments')
+      .push()
+      .set({client: "Joe"});
     }
 
     function addProfilePics() {
@@ -37,10 +40,12 @@ angular.module('thereApp')
     		console.log($scope.apps[i]);
     	}
     }
-    // $scope.addAppointment('app1', {
-    //   client: 'Big Boss'
-    // });
 
 
+    function test() {
+      api.update('appointments', {
+        client: 'Dan'
+      })
+    }
 
   });

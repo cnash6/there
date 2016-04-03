@@ -48,13 +48,6 @@
         $rootScope.session.disconnect();
         $rootScope.session = null;
       }
-      // if ($rootScope.loggedInUser == null) {
-      //   // no logged user, redirect to /login
-      //   if ( next.templateUrl === "partials/login.html") {
-      //   } else {
-      //     $location.path("/login");
-      //   }
-      // }
     });
   })
 
