@@ -9,9 +9,9 @@
  */
 angular.module('thereApp')
 
-  .controller('AppointmentsCtrl', function ($scope, $firebaseArray, Appointments, api) {
+  .controller('AppointmentsCtrl', function ($scope, $firebaseArray, api) {
 
-    $scope.appointments = Appointments;
+    $scope.appointments = api.getRef('appointments');
 	  $scope.apps = $firebaseArray($scope.appointments);
 	  $scope.apps.$loaded().then(function() {
 		      addProfilePics();
@@ -29,23 +29,15 @@ angular.module('thereApp')
     };
 
     $scope.addApp = function() {
-    	new Firebase("https://there4you.firebaseio.com/")
-      .child('appointments')
-      .push()
-      .set({client: "Joe"});
+      api.update('appointments', {
+        'client': 'Joe'
+      });
     }
 
     function addProfilePics() {
     	for (var i = 0; i < $scope.apps.length; i++) {
     		console.log($scope.apps[i]);
     	}
-    }
-
-
-    function test() {
-      api.update('appointments', {
-        client: 'Dan'
-      })
     }
 
   });
