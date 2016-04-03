@@ -7,8 +7,8 @@ var SECRET = "dd48288c2fc7807cb08dcec77009c0fd45efe205";
 var OpenTok = require('opentok');
 var opentok = new OpenTok(API_KEY, SECRET);
 
-app.listen(process.env.PORT || 5000, function () {
-	var port = process.env.PORT || 5000;
+app.listen(process.env.PORT || 9000, function () {
+	var port = process.env.PORT || 9000;
 	console.log("server started on port " + port);
 	app.use(express.static('dist'));
 });
@@ -21,7 +21,7 @@ app.get("/generatesession", function(req, res) {
 	    console.log("Error creating session:", error)
 	  } else {
 	    sessionId = session.sessionId;
-	    res.send({SessionId: sessionid});
+	    res.send({sessionId: sessionId});
 	  }
 	});
 })
