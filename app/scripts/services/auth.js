@@ -3,12 +3,14 @@ angular.module('thereApp')
 .service('auth', function(api, $location) {
   var currentUser = null;
   var currentSession = null;
+  var sessionId = null;
 
   return {
     login: login,
     logout: logout,
     getCurrentUser: getCurrentUser,
-    getCurrentSession: getCurrentSession,
+    getSessionId: getSessionId,
+    setSessionId: setSessionId
   };
 
   function login(username, password) {
@@ -41,8 +43,12 @@ angular.module('thereApp')
     return currentUser;
   }
 
-  function getCurrentSession() {
-    return currentSession;
+  function getSessionId() {
+    return sessionId;
+  }
+
+  function setSessionId(nSessionId) {
+    sessionId = nSessionId;
   }
 
 });

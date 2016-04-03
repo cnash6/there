@@ -19,7 +19,7 @@ angular.module('thereApp')
           sender: auth.getCurrentUser(),
           text: message,
           createdAt: moment().valueOf(),
-          session: $scope.session
+          session: auth.getSessionId()
         });
 
       };
