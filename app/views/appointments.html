@@ -1,9 +1,9 @@
+<h2 style="margin-left:20px;">Upcoming Appointments</h2>
 <div style="margin-top:20px; margin-left: 20px;"> <a ng-href="#/appointment/create"><i class="fa fa-plus fa-3x"></i> Create Appointment</a></div>
-
 <!-- <button class="btn btn-primary"ng-click="addApp()">Add Appointment</button>
 <button class="btn btn-primary"ng-click="addUser()">Add User</button> -->
 <div class="appointments-list-container">
-	<div ng-repeat="app in apps | orderBy: '-startdate' " class="appointment" ng-click="goToAppointment(app)">
+	<div ng-repeat="app in apps | filter:myUpcomingAppointments | orderBy: '-startdate' " class="appointment" ng-click="goToAppointment(app)">
 		<div class="appointment-profile-pic" ng-style="{'background-image': 'url(' + app.imageurl + ')'}">
 		</div>
 		<div class="appointment-content">

@@ -1,6 +1,6 @@
 angular.module('thereApp')
 
-.service('auth', function(api, $location) {
+.service('auth', function(api, $location, $cookies, $rootScope) {
   var currentUser = null;
   var currentSession = null;
   var sessionId = null;
@@ -14,21 +14,22 @@ angular.module('thereApp')
   };
 
   function login(username, password) {
-    console.log(username);
 
     api.exists('users', username).then(function(exists) {
       if (!exists) {
         api.update('users', {
-            role: 'therapist'
+            role: 'therapist',
+            username: username,
+            name: 'Joe'
         }, username).then(function() {
           api.getValue('users', username).then(function(user) {
-              currentUser = user;
+              setCurrentUser(user);
               $location.path('/appointments');
           });
         })
       } else {
         api.getValue('users', username).then(function(user) {
-            currentUser = user;
+            setCurrentUser(user);
             $location.path('/appointments');
         });
       }
@@ -36,11 +37,20 @@ angular.module('thereApp')
   }
 
   function logout() {
+    console.log('auth logout');
+    $cookies.remove('currentUser');
+
     currentUser = null;
+    $rootScope.$broadcast('changeCurrentUser', null);
   }
 
   function getCurrentUser() {
-    return currentUser;
+    return $cookies.getObject('currentUser');
+  }
+
+  function setCurrentUser(user) {
+    $cookies.putObject('currentUser', user);
+    $rootScope.$broadcast('changeCurrentUser', user);
   }
 
   function getSessionId() {

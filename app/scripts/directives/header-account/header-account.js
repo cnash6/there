@@ -5,15 +5,16 @@ angular.module('thereApp')
     scope: {
     },
     templateUrl: 'scripts/directives/header-account/header-account.html',
-    controller: function($scope, api, moment, auth) {
+    controller: function($scope, api, moment, auth, $rootScope) {
 
-      $scope.$watch(function() {
-          return auth.getCurrentUser();
-      }, function() {
+      $rootScope.$on('changeCurrentUser', function() {
+
+        console.log('changeCurrentUser');
         $scope.currentUser = auth.getCurrentUser();
+        
       });
 
-      $scope.logout = function() {
+      $scope.loggy = function() {
         auth.logout();
       };
 

@@ -9,7 +9,7 @@
  */
 angular.module('thereApp')
 
-  .controller('AppointmentsCtrl', function ($scope, $location, moment, api) {
+  .controller('AppointmentsCtrl', function ($scope, $location, moment, api, auth) {
 
     $scope.apps = api.getArray('appointments');
 
@@ -56,9 +56,9 @@ angular.module('thereApp')
   		  	});
   		  	for (var i = 0; i < $scope.apps.length; i++) {
   		  		for(var j = 0; j < users.length; j++) {
-  		  			if ($scope.apps[i].client == users[j].userid) {
+  		  			if ($scope.apps[i].client == users[j].username) {
   		  				$scope.apps[i].imageurl = users[j].imageurl;
-                $scope.fullnames[users[j].userid] = users[j].name;
+                $scope.fullnames[users[j].username] = users[j].name;
   		  			}
   		  		}
   		  	}
@@ -68,6 +68,11 @@ angular.module('thereApp')
 
     $scope.getFullName = function(username) {
         return $scope.fullnames[username];
+    };
+
+    $scope.myUpcomingAppointments = function(value, index, array) {
+      var currentUser = auth.getCurrentUser();
+      return currentUser && (value.therapist === currentUser.username || value.interpretter === currentUser.username || value.client === currentUser.username || value.observer === currentUser.username) ;
     };
 
   });
