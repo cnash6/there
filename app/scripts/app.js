@@ -32,6 +32,11 @@
 			controller: 'AppointmentsCtrl',
 			controllerAs: 'appointments'
 		})
+    .when('/login', {
+      templateUrl: 'views/login.html',
+      controller: 'LoginCtrl',
+      controllerAs: 'loginCtrl'
+    })
 		.when('/session', {
 		  templateUrl: 'views/session.html',
 		  controller: 'SessionCtrl',

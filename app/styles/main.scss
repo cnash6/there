@@ -82,6 +82,8 @@ main {
 
 .video-container {
 	flex:1;
+	padding-top: 50px;
+	position: relative;
 }
 
 .utility-sidebar {
@@ -231,6 +233,30 @@ main {
 
 .navbar {
 	margin-bottom: 0;
+}
+
+.mainCamDiv-container {
+	position: absolute;
+    top: 50px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+}
+
+.myCamDiv-container {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    height: 200px;
+    width: 265px;
+}
+
+.theirCamDiv-container {
+	position: absolute;
+    bottom: 5px;
+    right: 5px;
+    height: 200px;
+    width: 265px;
 }
 
 
