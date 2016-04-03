@@ -1,3 +1,4 @@
+<h4>Messages</h4>
 <div ng-repeat="message in messages" class="message-group">
   <div class="message message-sender">{{message.sender}}</div>
   <div class="message message-receive">{{message.text}}</div>
@@ -5,5 +6,5 @@
 </div>
 <div>
   <input type="text" ng-model="message"></input>
-  <button ng-click="addMessage(message)">Send</button>
+  <button class="btn btn-primary" ng-click="addMessage(message)">Send</button>
 </div>

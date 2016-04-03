@@ -12,7 +12,7 @@ angular.module('thereApp')
 
         api.update('notes', {
           sender: auth.getCurrentUser(),
-          text: message,
+          text: note,
           createdAt: moment().valueOf(),
           session: auth.getSessionId()
         });
