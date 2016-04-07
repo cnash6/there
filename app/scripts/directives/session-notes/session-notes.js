@@ -5,7 +5,7 @@ angular.module('thereApp')
     scope: {
       session: '=session'
     },
-    templateUrl: 'scripts/directives/session-notes/session-notes.html',
+    templateUrl: 'views/session-notes.html',
     controller: function($scope, api, moment, auth) {
 
       $scope.notes = api.getArray('notes');

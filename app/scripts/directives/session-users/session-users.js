@@ -5,7 +5,7 @@ angular.module('thereApp')
     scope: {
       session: '=session'
     },
-    templateUrl: 'scripts/directives/session-users/session-users.html',
+    templateUrl: 'views/session-users.html',
     controller: function($scope, api, moment, auth) {
 
 

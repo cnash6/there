@@ -5,7 +5,7 @@ angular.module('thereApp')
     scope: {
       session: '=session'
     },
-    templateUrl: 'scripts/directives/session-messages/session-messages.html',
+    templateUrl: 'views/session-messages.html',
     controller: function($scope, api, moment, auth, $firebaseArray) {
 
       $scope.messages = api.getArray('messages');

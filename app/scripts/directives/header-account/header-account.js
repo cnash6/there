@@ -4,7 +4,7 @@ angular.module('thereApp')
     restrict: 'EA',
     scope: {
     },
-    templateUrl: 'scripts/directives/header-account/header-account.html',
+    templateUrl: 'views/header-account.html',
     controller: function($scope, api, moment, auth, $rootScope) {
 
       //$scope.currentUser = auth.getCurrentUser();
