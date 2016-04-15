@@ -17,8 +17,8 @@
 		'ngRoute',
 		'ngSanitize',
 		'ngTouch',
-    'firebase',
-    'ui.bootstrap'
+    	'firebase',
+    	'ui.bootstrap'
 		])
 	.config(function ($routeProvider) {
 		$routeProvider
@@ -58,16 +58,19 @@
 		  controllerAs: 'createAppointmentCtrl'
 		})
 		.otherwise({
-			redirectTo: '/'
+			redirectTo: '/login'
 		});
 	})
 
-  .run(function($rootScope, $location) {
+  .run(function($rootScope, $location, auth) {
     $rootScope.$on( "$locationChangeStart", function(event, next, current) {
       if ($rootScope.session) {
         $rootScope.session.off();
         $rootScope.session.disconnect();
         $rootScope.session = null;
+      }
+      if (!auth.getCurrentUser()) {
+        $location.path('/login');
       }
     });
   })

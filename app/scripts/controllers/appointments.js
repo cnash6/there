@@ -11,15 +11,19 @@ angular.module('thereApp')
 
   .controller('AppointmentsCtrl', function ($scope, $location, moment, api, auth) {
 
-    $scope.apps = api.getArray('appointments');
+    init()
 
+    function init() {
 
-    $scope.fullnames = [];
+      $scope.apps = api.getArray('appointments');
 
-  	$scope.apps.$ref().on("value", function(snap) {
-  		addProfilePics()
-    		//console.log(snap.val());
-  	});
+      $scope.fullnames = [];
+
+      $scope.apps.$ref().on("value", function(snap) {
+        addProfilePics()
+          //console.log(snap.val());
+      });
+    }
 
     $scope.addAppointment = function(appId, appData) {
       	$scope.appointments.child(appId).update(appData);
