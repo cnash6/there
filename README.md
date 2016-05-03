@@ -13,3 +13,4 @@ Running `grunt test` will run the unit tests with karma.
 3
 TEST1
 
+2
